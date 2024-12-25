@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlatList, Image, RefreshControl, Text, View } from "react-native";
-
+import AuthGuard from "../../components/AuthGuard";
 import { images } from "../../constants";
 import useAppwrite from "../../lib/useAppwrite";
 import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
@@ -26,7 +26,6 @@ const Home = () => {
   //  we cannot do that with just scrollview as there's both horizontal and vertical scroll (two flat lists, within trending)
 
   return (
-    <AuthGuard allowedRoles={["admin"]}>
     <SafeAreaView className="bg-primary">
       <FlatList
         data={posts}
@@ -83,7 +82,6 @@ const Home = () => {
         }
       />
     </SafeAreaView>
-    </AuthGuard>
   );
 };
 
