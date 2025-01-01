@@ -17,5 +17,5 @@ const App = () => {
     </NavigationContainer>
   );
 };
-
+//buna dikkat
 export default App;
